@@ -1,0 +1,18 @@
+package com.chandu.design.pattern.creational.singleton;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class DoubleCheckedLockingThreadSafeSingletonTest {
+
+    @Test
+    public void testDoubleCheckedLockingSingleton() {
+        DoubleCheckedLockingThreadSafeSingleton instance1 = DoubleCheckedLockingThreadSafeSingleton.getInstance();
+        DoubleCheckedLockingThreadSafeSingleton instance2 = DoubleCheckedLockingThreadSafeSingleton.getInstance();
+        System.out.println("Instance 1: " + instance1);
+        System.out.println("Instance 2: " + instance2);
+        assertEquals(instance1, instance2);
+    }
+
+}
